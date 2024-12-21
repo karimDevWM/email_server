@@ -10,9 +10,9 @@ const app = express();
 const port = process.env.SERVER_PORT
 
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
 
-const allowedOrigin = process.env.ANGULAR_ORIGIN;
+// const allowedOrigin = process.env.ANGULAR_ORIGIN;
 
 // app.use(cors({
 //     origin: (origin, callback) => {
@@ -28,7 +28,7 @@ const allowedOrigin = process.env.ANGULAR_ORIGIN;
 //     credentials: true, // If you need to allow cookies/auth headers
 //   }));
 
-app.post("/send-email", async (request, response) => {
+app.post("/send-email", cors(), async (request, response) => {
     const {name, email, message} = request.body;
 
     try {

@@ -63,4 +63,4 @@ app.post("/send-email", async (request, response) => {
     }
 });
 
-app.listen(port, () => console.log(`Mail service listening on port ${port}`));
+app.listen(port, '0.0.0.0', () => console.log(`Mail service listening on port ${port}`));

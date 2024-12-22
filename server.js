@@ -28,7 +28,14 @@ app.use(bodyParser.json());
 //     credentials: true, // If you need to allow cookies/auth headers
 //   }));
 
-app.use(cors());
+const allowedOrigins = ['http://le_roi_shawarma.karim-portfolio.xyz'];
+
+const corsOptions = {
+  origin: allowedOrigins,
+  credentials: true, // Allow requests with credentials
+};
+
+app.use(cors(corsOptions));
 
 app.post("/send-email", async (request, response) => {
     const {name, email, message} = request.body;

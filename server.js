@@ -28,10 +28,7 @@ app.use(bodyParser.json());
 //     credentials: true, // If you need to allow cookies/auth headers
 //   }));
 
-app.use(cors({
-  origin: '*',
-  methods: 'GET,POST,PUT,DELETE,OPTIONS', // Allow specific methods
-}));
+app.use(cors());
 
 app.post("/send-email", async (request, response) => {
     const {name, email, message} = request.body;

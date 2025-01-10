@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 //     credentials: true, // If you need to allow cookies/auth headers
 //   }));
 
-const allowedOrigins = ['http://le_roi_shawarma.karim-portfolio.xyz'];
+const allowedOrigins = ['https://le_roi_shawarma.karim-portfolio.xyz', 'http://localhost:4200'];
 
 const corsOptions = {
   origin: allowedOrigins,
